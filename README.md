@@ -2,43 +2,36 @@
 
 A RESTful API for managing users with authentication, validation, and middleware implementation.
 
+## Project Structure
+
+```
+user-management-api/
+├── package.json              # Dependencies and scripts
+├── server.js                 # Main server file
+├── .env                      # Environment variables
+├── .gitignore               # Git ignore rules
+├── README.md                # Project documentation
+├── routes/
+│   └── users.js             # User route definitions
+├── controllers/
+│   └── userController.js    # Business logic for users
+└── middleware/
+    ├── auth.js              # JWT authentication middleware
+    ├── validation.js        # Input validation middleware
+    ├── logging.js           # Request logging middleware
+    └── errorHandler.js      # Error handling middleware
+```
+
 ## Features
 
-- ✅ Complete CRUD operations (GET, POST, PUT, DELETE)
-- ✅ Input validation using Joi
-- ✅ JWT authentication middleware
-- ✅ Request logging middleware
-- ✅ Error handling middleware
-- ✅ Password hashing with bcrypt
-- ✅ Security headers with Helmet
-- ✅ CORS support
-
-## Installation
-
-1. Clone the repository:
-```bash
-git clone <your-repo-url>
-cd user-management-api
-```
-
-2. Install dependencies:
-```bash
-npm install
-```
-
-3. Create a `.env` file in the root directory:
-```bash
-PORT=3000
-JWT_SECRET=your-super-secret-jwt-key
-NODE_ENV=development
-```
-
-4. Start the server:
-```bash
-npm start
-# or for development with auto-reload
-npm run dev
-```
+- Complete CRUD operations (GET, POST, PUT, DELETE)
+- Input validation using Joi
+- JWT authentication middleware
+- Request logging middleware
+- Error handling middleware
+- Password hashing with bcrypt
+- Security headers with Helmet
+- CORS support
 
 ## API Endpoints
 
@@ -54,36 +47,6 @@ npm run dev
 
 ### Health Check
 - `GET /health` - Check API status
-
-## Request Examples
-
-### Create User
-```json
-POST /api/users
-{
-  "name": "John Doe",
-  "email": "john@example.com",
-  "password": "password123"
-}
-```
-
-### Login
-```json
-POST /api/users/login
-{
-  "email": "john@example.com",
-  "password": "password123"
-}
-```
-
-### Update User (with token)
-```json
-PUT /api/users/1
-Authorization: Bearer <your-jwt-token>
-{
-  "name": "John Smith"
-}
-```
 
 ## Validation Rules
 
